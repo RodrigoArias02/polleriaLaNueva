@@ -1,0 +1,125 @@
+{
+  "products": [
+    {
+      "id": "milanesas-pollo",
+      "category": "elaborados",
+      "name": "Milanesas de pollo",
+      "description": "Milanesas de pollo caseras, listas para freír o al horno.",
+      "image": "./public/products/milanesas_pollo.webp",
+      "pricing": {
+        "type": "options",
+        "options": [
+          { "label": "1 kg", "price": 14000 },
+          { "label": "2 kg", "price": 20000 }
+        ]
+      },
+      "available": true,
+      "featured": true,
+      "promotion": false
+    },
+    {
+      "id": "arrollado-pollo",
+      "category": "elaborados",
+      "name": "Arrollado de pollo",
+      "description": "Arrollado de pollo relleno, ideal para el almuerzo o la cena.",
+      "image": "./public/products/arollado_pollo.webp",
+      "pricing": {
+        "type": "fixed",
+        "price": 14000
+      },
+      "available": true,
+      "featured": false,
+      "promotion": false
+    },
+    {
+      "id": "pata-muslo",
+      "category": "pollo",
+      "name": "Pata muslo",
+      "description": "Pata muslo de pollo fresco, perfecto para el disco o la parrilla.",
+      "image": "/images/pata-muslo.webp",
+      "pricing": {
+        "type": "options",
+        "options": [
+          { "label": "1 kg", "price": 5000 },
+          { "label": "3 kg", "price": 13800 }
+        ]
+      },
+      "available": true,
+      "featured": true,
+      "promotion": false
+    },
+    {
+      "id": "milanesas-jyq",
+      "category": "rellenas",
+      "name": "Milanesas rellenas de JyQ",
+      "description": "Milanesas de pollo rellenas de jamón y queso.",
+      "image": "/images/milanesas-jyq.webp",
+      "pricing": {
+        "type": "fixed",
+        "price": 17500
+      },
+      "available": true,
+      "featured": false,
+      "promotion": false
+    },
+    {
+      "id": "milanesas-caprese",
+      "category": "rellenas",
+      "name": "Milanesas rellenas Caprese",
+      "description": "Milanesas de pollo rellenas con muzzarella, tomate y albahaca.",
+      "image": "/images/milanesas-caprese.webp",
+      "pricing": {
+        "type": "fixed",
+        "price": 17000
+      },
+      "available": true,
+      "featured": false,
+      "promotion": false
+    },
+    {
+      "id": "milanesas-semillas",
+      "category": "elaborados",
+      "name": "Milanesas de pollo con mix de semillas",
+      "description": "Milanesas de pollo rebozadas con mix de semillas.",
+      "image": "/images/milanesas-semillas.webp",
+      "pricing": {
+        "type": "fixed",
+        "price": 13000,
+        "unit": "kg"
+      },
+      "available": true,
+      "featured": false,
+      "promotion": false
+    },
+    {
+      "id": "combo-milanesas-papas",
+      "category": "combos",
+      "name": "Combo milanesas + papas",
+      "description": "2 kg de milanesas de pollo + 3 kg de papas para acompañar.",
+      "image": "/images/combo-milanesas-papas.webp",
+      "pricing": {
+        "type": "fixed",
+        "price": 25000
+      },
+      "available": true,
+      "featured": true,
+      "promotion": true
+    },
+    {
+      "id": "medallones",
+      "category": "elaborados",
+      "name": "Medallones de pollo",
+      "description": "Medallones de pollo tiernos, prácticos para toda la semana.",
+      "image": "/images/medallones.webp",
+      "pricing": {
+        "type": "options",
+        "options": [
+          { "label": "2 kg", "price": 19000 }
+        ]
+      },
+      "available": true,
+      "featured": false,
+      "promotion": false
+    }
+  ]
+}
