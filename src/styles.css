@@ -198,10 +198,7 @@ img {
   transition: border-color 0.15s ease, background 0.15s ease;
 }
 
-.header__cart-btn:hover {
-  border-color: var(--accent);
-  background: var(--accent-soft);
-}
+
 
 .header__cart-icon {
   font-size: 30px;
@@ -242,7 +239,7 @@ img {
         rgba(0, 0, 0, .9) 50%, 
       rgba(0, 0, 0, 0.3) 100%
     ),
-    url("./public/images/fondo.avif");
+    url("./images/fondo.avif");
     
   background-repeat: no-repeat;
   background-position: center;
@@ -361,7 +358,7 @@ img {
   top: 12px;
   left: 12px;
   z-index: 2;
-  background: var(--accent);
+  background: #191916;
   color: #fff;
   font-size: 12px;
   font-weight: 700;
@@ -528,6 +525,7 @@ img {
 
 .cart-drawer.is-open {
   transform: translateX(0);
+  border: none;
 }
 
 .cart-drawer__header {
@@ -799,7 +797,7 @@ img {
   position: absolute;
   top: 14px;
   left: 14px;
-  background: var(--accent);
+  background: #191916;
   color: #fff;
   font-size: 12px;
   font-weight: 700;
