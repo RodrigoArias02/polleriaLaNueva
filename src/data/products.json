@@ -5,7 +5,7 @@
       "category": "elaborados",
       "name": "Milanesas de pollo",
       "description": "Milanesas de pollo caseras, listas para freír o al horno.",
-      "image": "./public/products/milanesas_pollo.webp",
+      "image": "/products/milanesas_pollo.webp",
       "pricing": {
         "type": "options",
         "options": [
@@ -22,7 +22,7 @@
       "category": "elaborados",
       "name": "Arrollado de pollo",
       "description": "Arrollado de pollo relleno, ideal para el almuerzo o la cena.",
-      "image": "./public/products/arollado_pollo.webp",
+      "image": "./products/arollado_pollo.webp",
       "pricing": {
         "type": "fixed",
         "price": 14000
