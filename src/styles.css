@@ -230,17 +230,16 @@ img {
   /* Gradiente de izquierda a derecha: 
      Inicia con 40% de negro (rgba 0.4) a la izquierda (0%) 
      y avanza hacia un negro más opaco hacia la derecha */
-  background-image: 
-    linear-gradient(
-      to right, 
-      rgba(0, 0, 0, 1) 0%, 
-      rgba(0, 0, 0, 1) 20%, 
-       rgba(0, 0, 0, .8) 45%, 
-        rgba(0, 0, 0, .9) 50%, 
-      rgba(0, 0, 0, 0.3) 100%
-    ),
-    url("./images/fondo.avif");
-    
+background-image: 
+  linear-gradient(
+    to right, 
+    rgba(0, 0, 0, 1) 0%, 
+    rgba(0, 0, 0, 1) 20%, 
+    rgba(0, 0, 0, .8) 45%, 
+    rgba(0, 0, 0, .9) 50%, 
+    rgba(0, 0, 0, 0.3) 100%
+  ),
+  url("/images/fondo.avif");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
