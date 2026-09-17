@@ -3,7 +3,9 @@ import { useCart } from "../context/CartContext.jsx";
 import { formatPrice } from "../utils/format.js";
 import { parseKgFromLabel } from "../utils/pricing.js";
 import { PlusIcon, MinusIcon } from "../utils/icons.jsx";
+import { useLockBodyScroll } from "../hooks/scroll.js";
 export default function ProductModal({ product, onClose }) {
+  useLockBodyScroll(true)
   const { addToCart } = useCart();
   const hasOptions = product.pricing.type === "options";
 

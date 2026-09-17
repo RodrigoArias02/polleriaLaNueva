@@ -1,21 +1,33 @@
 import { useCart } from '../context/CartContext.jsx'
 import { formatPrice } from '../utils/format.js'
 import { buildWhatsAppOrderUrl } from '../utils/whatsapp.js'
+import { useLockBodyScroll } from '../hooks/scroll.js'
 
 export default function Cart({ isOpen, onClose }) {
   const { cartItems, updateQuantity, removeFromCart, cartTotal } = useCart()
   const hasItems = cartItems.length > 0
-  
+
   function handleWhatsAppOrder() {
     const url = buildWhatsAppOrderUrl(cartItems, cartTotal)
     window.open(url, '_blank', 'noopener,noreferrer')
   }
 
+  // Saca el foco de lo que esté enfocado dentro del drawer antes de cerrarlo,
+  // para evitar el warning de aria-hidden/inert sobre un elemento con foco.
+  function handleClose(event) {
+    if (event?.currentTarget) {
+      event.currentTarget.blur()
+    } else if (document.activeElement instanceof HTMLElement) {
+      document.activeElement.blur()
+    }
+    onClose()
+  }
+  useLockBodyScroll(isOpen)
   return (
     <>
       <div
         className={`cart-overlay ${isOpen ? 'is-visible' : ''}`}
-        onClick={onClose}
+        onClick={handleClose}
         aria-hidden="true"
       />
 
@@ -23,14 +35,14 @@ export default function Cart({ isOpen, onClose }) {
         className={`cart-drawer ${isOpen ? 'is-open' : ''}`}
         role="dialog"
         aria-label="Carrito de compras"
-        aria-hidden={!isOpen}
+        inert={!isOpen ? '' : undefined}
       >
         <div className="cart-drawer__header">
           <h2>Tu pedido</h2>
           <button
             type="button"
             className="cart-drawer__close"
-            onClick={onClose}
+            onClick={handleClose}
             aria-label="Cerrar carrito"
           >
             ✕
