@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { useCart } from "../context/CartContext";
-import { formatPrice } from "../utils/format";
-import { parseKgFromLabel } from "../utils/pricing";
+import { useCart } from "../context/CartContext.jsx";
+import { formatPrice } from "../utils/format.js";
+import { parseKgFromLabel } from "../utils/pricing.js";
 
 export default function ProductModal({ product, onClose }) {
   const { addToCart } = useCart();

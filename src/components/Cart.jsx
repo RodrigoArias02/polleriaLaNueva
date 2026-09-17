@@ -1,6 +1,6 @@
-import { useCart } from '../context/CartContext'
-import { formatPrice } from '../utils/format'
-import { buildWhatsAppOrderUrl } from '../utils/whatsapp'
+import { useCart } from '../context/CartContext.jsx'
+import { formatPrice } from '../utils/format.js'
+import { buildWhatsAppOrderUrl } from '../utils/whatsapp.js'
 
 export default function Cart({ isOpen, onClose }) {
   const { cartItems, updateQuantity, removeFromCart, cartTotal } = useCart()

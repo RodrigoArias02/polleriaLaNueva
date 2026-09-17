@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { useCart } from '../context/CartContext'
-import { formatPrice } from '../utils/format'
+import { useCart } from '../context/CartContext.jsx'
+import { formatPrice } from '../utils/format.js'
 import { CartOutLineIcon } from '../utils/icons.jsx'
 export default function ProductCard({ product, onOpenModal }) {
   const { addToCart } = useCart()

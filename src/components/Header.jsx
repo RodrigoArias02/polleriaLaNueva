@@ -1,6 +1,6 @@
-import { useCart } from "../context/CartContext";
+import { useCart } from "../context/CartContext.jsx";
 import { useState, useEffect } from "react";
-import { STORE_NAME } from "../config";
+import { STORE_NAME } from "../config.js";
 import { ChikenIcon, CartIcon } from "../utils/icons.jsx";
 export default function Header({ onOpenCart }) {
   const { cartItemCount } = useCart();

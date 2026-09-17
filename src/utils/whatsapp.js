@@ -1,5 +1,5 @@
-import { formatPrice } from './format'
-import { WHATSAPP_PHONE } from '../config'
+import { formatPrice } from './format.js'
+import { WHATSAPP_PHONE } from '../config.js'
 
 // Arma el mensaje de pedido y devuelve la URL de WhatsApp lista para abrir.
 export function buildWhatsAppOrderUrl(cartItems, cartTotal) {

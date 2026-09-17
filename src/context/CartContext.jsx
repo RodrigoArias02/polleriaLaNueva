@@ -1,5 +1,5 @@
 import { createContext, useContext, useMemo, useState } from 'react'
-import { resolveCartLine, getKgTiers, pickTierForQuantity, parseKgFromLabel } from '../utils/pricing'
+import { resolveCartLine, getKgTiers, pickTierForQuantity, parseKgFromLabel } from '../utils/pricing.js'
 
 const CartContext = createContext(null)
 
