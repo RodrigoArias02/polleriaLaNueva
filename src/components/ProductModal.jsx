@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useCart } from "../context/CartContext.jsx";
 import { formatPrice } from "../utils/format.js";
 import { parseKgFromLabel } from "../utils/pricing.js";
-
+import { PlusIcon, MinusIcon } from "../utils/icons.jsx";
 export default function ProductModal({ product, onClose }) {
   const { addToCart } = useCart();
   const hasOptions = product.pricing.type === "options";
@@ -70,7 +70,7 @@ export default function ProductModal({ product, onClose }) {
       }
     }
   }, [product, quantity]); // Solo se ejecuta si cambia el producto o la cantidad
-  
+
   return (
     <div className="modal-overlay" onClick={onClose}>
       <div
@@ -93,7 +93,7 @@ export default function ProductModal({ product, onClose }) {
           {product.promotion && (
             <span className="modal-card__badge">Oferta</span>
           )}
-          {!imageError ? (
+          {!imageError && product.image ? (
             <img
               src={product.image}
               alt={product.name}
@@ -101,9 +101,12 @@ export default function ProductModal({ product, onClose }) {
               onError={() => setImageError(true)}
             />
           ) : (
-            <div className="modal-card__image-fallback" aria-hidden="true">
-              🐔
-            </div>
+            <img
+              src="/images/not_found.jpg"
+              alt={product.name}
+              className="modal-card__image modal-card__image--fallback"
+              loading="lazy"
+            />
           )}
         </div>
 
@@ -142,7 +145,7 @@ export default function ProductModal({ product, onClose }) {
                 onClick={() => changeQuantity(quantity - 1)}
                 aria-label="Restar cantidad"
               >
-                −
+                <MinusIcon />
               </button>
               <input
                 type="number"
@@ -157,7 +160,7 @@ export default function ProductModal({ product, onClose }) {
                 onClick={() => changeQuantity(quantity + 1)}
                 aria-label="Sumar cantidad"
               >
-                +
+                <PlusIcon />
               </button>
             </div>
           </div>

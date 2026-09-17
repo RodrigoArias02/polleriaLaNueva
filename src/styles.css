@@ -212,7 +212,7 @@ img {
   height: 20px;
   padding: 0 5px;
   border-radius: 999px;
-  background: var(--accent);
+  background: var(--text);
   color: #fff;
   font-size: 11px;
   font-weight: 700;
@@ -345,6 +345,8 @@ background-image:
   display: flex;
   flex-direction: column;
   transition: border-color 0.15s ease, transform 0.15s ease;
+
+ box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .product-card:hover {
@@ -375,6 +377,7 @@ background-image:
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-bottom: 1px solid var(--border);
 }
 
 .product-card__image-fallback {
@@ -781,6 +784,7 @@ background-image:
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-bottom: 1px solid var(--border);
 }
 
 .modal-card__image-fallback {
@@ -871,11 +875,12 @@ background-image:
   width: 30px;
   height: 30px;
   border: none;
-  background: var(--accent-soft);
+  background: var(--text);
   border-radius: 6px;
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--accent-dark);
+  color: var(--surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .modal-card__stepper input {
@@ -936,7 +941,9 @@ background-image:
 }
 
 .modal-card__add-btn:hover {
-  background: var(--accent-dark);
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--text);
 }
 
 @media (max-width: 640px) {

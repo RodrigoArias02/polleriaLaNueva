@@ -71,7 +71,10 @@ export default function ProductCard({ product, onOpenModal }) {
                 className={`product-card__option ${
                   selectedOption.label === option.label ? "is-selected" : ""
                 }`}
-                onClick={() => setSelectedOption(option)}
+                onClick={(event) => {
+                  event.stopPropagation();
+                  setSelectedOption(option);
+                }}
               >
                 {option.label}
               </button>
@@ -87,7 +90,10 @@ export default function ProductCard({ product, onOpenModal }) {
           <button
             type="button"
             className="product-card__add-btn"
-            onClick={handleAdd}
+            onClick={(event) => {
+              event.stopPropagation();
+              handleAdd();
+            }}
           >
             <CartOutLineIcon />
             Agregar

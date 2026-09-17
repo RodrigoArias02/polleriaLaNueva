@@ -15,7 +15,7 @@
       },
       "available": true,
       "featured": true,
-      "promotion": false
+      "promotion": true
     },
     {
       "id": "arrollado-pollo",
@@ -46,7 +46,7 @@
       },
       "available": true,
       "featured": true,
-      "promotion": false
+      "promotion": true
     },
     {
       "id": "milanesas-jyq",
@@ -103,7 +103,7 @@
       },
       "available": true,
       "featured": true,
-      "promotion": true
+      "promotion": false
     },
     {
       "id": "medallones",
@@ -114,12 +114,13 @@
       "pricing": {
         "type": "options",
         "options": [
+          { "label": "1 kg", "price": 11000 },
           { "label": "2 kg", "price": 19000 }
         ]
       },
       "available": true,
       "featured": false,
-      "promotion": false
+      "promotion": true
     }
   ]
 }
