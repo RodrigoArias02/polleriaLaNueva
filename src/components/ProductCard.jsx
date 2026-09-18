@@ -10,8 +10,10 @@ export default function ProductCard({ product, onOpenModal }) {
   );
   const [imageError, setImageError] = useState(false);
 
+  const currentOption = selectedOption ?? product.pricing.options?.[0] ?? null;
+
   const displayPrice = hasOptions
-    ? selectedOption.price
+    ? currentOption?.price
     : product.pricing.price;
   const unitSuffix =
     !hasOptions && product.pricing.unit ? `/${product.pricing.unit}` : "";

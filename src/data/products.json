@@ -5,7 +5,7 @@
       "category": "elaborados",
       "name": "Milanesas de pollo",
       "description": "Milanesas de pollo caseras, listas para freír o al horno.",
-      "image": "/products/milanesas_pollo.webp",
+      "image": "/products/milanesas_pollo.jpg",
       "pricing": {
         "type": "options",
         "options": [
@@ -22,21 +22,25 @@
       "category": "elaborados",
       "name": "Arrollado de pollo",
       "description": "Arrollado de pollo relleno, ideal para el almuerzo o la cena.",
-      "image": "./products/arollado_pollo.webp",
+      "image": "./products/arrollados_pollo.jpg",
       "pricing": {
-        "type": "fixed",
-        "price": 14000
+        "type": "options",
+        "options": [
+          { "label": "0.5 kg", "price": 8000 },
+          { "label": "1 kg", "price": 16000 }
+        ]
       },
       "available": true,
       "featured": false,
       "promotion": false
     },
+
     {
       "id": "pata-muslo",
       "category": "pollo",
       "name": "Pata muslo",
       "description": "Pata muslo de pollo fresco, perfecto para el disco o la parrilla.",
-      "image": "/images/pata-muslo.webp",
+      "image": "./products/pata_muslo.jpg",
       "pricing": {
         "type": "options",
         "options": [
@@ -49,14 +53,74 @@
       "promotion": true
     },
     {
+      "id": "suprema",
+      "category": "pollo",
+      "name": "Suprema de pollo",
+      "description": "Suprema de pollo fresco, perfecto para el horno o el disco.",
+      "image": "./products/",
+      "pricing": {
+        "type": "options",
+        "options": [{ "label": "1 kg", "price": 16000 }]
+      },
+      "available": true,
+      "featured": true,
+      "promotion": false
+    },
+    {
+      "id": "pata_deshuesada",
+      "category": "pollo",
+      "name": "Pata y muslo deshuesada",
+      "description": "Pata y muslo deshuesada",
+      "image": "./products/pata_deshuesada.jpg",
+      "pricing": {
+        "type": "options",
+        "options": [{ "label": "1 kg", "price": 16000 }]
+      },
+      "available": true,
+      "featured": true,
+      "promotion": false
+    },
+    {
+      "id": "pollo",
+      "category": "pollo",
+      "name": "Pollo entero",
+      "description": "Pollo entero, perfecto para el horno o el disco.",
+      "image": "./products/pollo_entero.jpeg",
+      "pricing": {
+        "type": "options",
+        "options": [{ "label": "1 kg", "price": 5000 }]
+      },
+      "available": true,
+      "featured": true,
+      "promotion": false
+    },
+    {
+      "id": "albondigas",
+      "category": "elaborados",
+      "name": "Albondigas de pollo con jyq",
+      "description": "Albondigas de pollo rellenas con Jamon y Queso",
+      "image": "./products/albondigas_jyq.jpg",
+      "pricing": {
+        "type": "options",
+        "options": [
+          { "label": "1 kg", "price": 13000 }
+        ]
+        
+      },
+      "available": true,
+      "featured": true,
+      "promotion": true
+    },
+    {
       "id": "milanesas-jyq",
-      "category": "rellenas",
+      "category": "elaborados",
       "name": "Milanesas rellenas de JyQ",
       "description": "Milanesas de pollo rellenas de jamón y queso.",
-      "image": "/images/milanesas-jyq.webp",
+      "image": "./products/milas_rellenas_jyq.jpg",
       "pricing": {
         "type": "fixed",
-        "price": 17500
+        "price": 17500,
+        "unit": "kg"
       },
       "available": true,
       "featured": false,
@@ -64,13 +128,14 @@
     },
     {
       "id": "milanesas-caprese",
-      "category": "rellenas",
+      "category": "elaborados",
       "name": "Milanesas rellenas Caprese",
-      "description": "Milanesas de pollo rellenas con muzzarella, tomate y albahaca.",
-      "image": "/images/milanesas-caprese.webp",
+      "description": "Milanesas de pollo rellenas con queso, tomate y albahaca.",
+      "image": "./products/milas_rellenas_jyq.jpg",
       "pricing": {
         "type": "fixed",
-        "price": 17000
+        "price": 17000,
+        "unit": "kg"
       },
       "available": true,
       "featured": false,
@@ -84,7 +149,7 @@
       "image": "/images/milanesas-semillas.webp",
       "pricing": {
         "type": "fixed",
-        "price": 13000,
+        "price": 15000,
         "unit": "kg"
       },
       "available": true,
@@ -95,11 +160,11 @@
       "id": "combo-milanesas-papas",
       "category": "combos",
       "name": "Combo milanesas + papas",
-      "description": "2 kg de milanesas de pollo + 3 kg de papas para acompañar.",
+      "description": "2 kg de milanesas de pollo + 1 kg de papas para acompañar.",
       "image": "/images/combo-milanesas-papas.webp",
       "pricing": {
         "type": "fixed",
-        "price": 25000
+        "price": 24000
       },
       "available": true,
       "featured": true,
@@ -107,10 +172,82 @@
     },
     {
       "id": "medallones",
-      "category": "elaborados",
+      "category": "congelados",
       "name": "Medallones de pollo",
       "description": "Medallones de pollo tiernos, prácticos para toda la semana.",
-      "image": "/images/medallones.webp",
+      "image": "./products/medallon.jpg",
+      "pricing": {
+        "type": "options",
+        "options": [
+          { "label": "0.5 kg", "price": 5500 },
+          { "label": "1 kg", "price": 11000 },
+          { "label": "2 kg", "price": 19000 }
+        ]
+      },
+      "available": true,
+      "featured": false,
+      "promotion": true
+    },
+    {
+      "id": "medallones_jyq",
+      "category": "congelados",
+      "name": "Medallones de pollo con jyq",
+      "description": "Medallones de pollo con jamon y queso, prácticos para toda la semana.",
+      "image": "./products/medallon.jpg",
+      "pricing": {
+        "type": "options",
+        "options": [
+          { "label": "0.5 kg", "price": 5500 },
+          { "label": "1 kg", "price": 11000 },
+          { "label": "2 kg", "price": 19000 }
+        ]
+      },
+      "available": true,
+      "featured": false,
+      "promotion": true
+    },
+    {
+      "id": "medallones_espinaca",
+      "category": "congelados",
+      "name": "Medallones de pollo con espinaca",
+      "description": "Medallones de pollo con espinaca, prácticos para toda la semana.",
+      "image": "./products/medallon_espinaca.webp",
+      "pricing": {
+        "type": "options",
+        "options": [
+          { "label": "0.5 kg", "price": 5500 },
+          { "label": "1 kg", "price": 11000 },
+          { "label": "2 kg", "price": 19000 }
+        ]
+      },
+      "available": true,
+      "featured": false,
+      "promotion": true
+    },
+    {
+      "id": "merluza_hierbas",
+      "category": "congelados",
+      "name": "Filet de merluza finas hierbas",
+      "description": "Filet de merluza premium del Mar Argentino, rebozado y sutilmente sazonado con finas hierbas. Súper crocante, práctico y listo para cocinar directo del freezer al horno.",
+      "image": "./products/merluza_hierbas.jpeg",
+      "pricing": {
+        "type": "options",
+        "options": [
+          { "label": "0.5 kg", "price": 7000 },
+          { "label": "1 kg", "price": 14000 },
+          { "label": "2 kg", "price": 25000 }
+        ]
+      },
+      "available": true,
+      "featured": false,
+      "promotion": true
+    },
+    {
+      "id": "bondiola",
+      "category": "pollo",
+      "name": "Bifes de bondila de cerdo",
+      "description": "Bifes de bondiola de cerdo 200gr aprox c/u.",
+      "image": "./products/bondiola.jpg",
       "pricing": {
         "type": "options",
         "options": [
@@ -121,6 +258,145 @@
       "available": true,
       "featured": false,
       "promotion": true
+    },
+    {
+      "id": "merluza_limon",
+      "category": "congelados",
+      "name": "Filet de merluza con pimienta y limon",
+      "description": "Medallones de pollo tiernos, prácticos para toda la semana.",
+      "image": "./products/merluza_limon.jpeg",
+      "pricing": {
+        "type": "options",
+        "options": [
+          { "label": "0.5 kg", "price": 8000 },
+          { "label": "1 kg", "price": 16000 },
+          { "label": "2 kg", "price": 29000 }
+        ]
+      },
+      "available": true,
+      "featured": false,
+      "promotion": true
+    },
+    {
+      "id": "supremitas",
+      "category": "congelados",
+      "name": "Supremitas de pollo",
+      "description": "Supremitas de pollo grangys.",
+      "image": "./products/supremitas.jpeg",
+      "pricing": {
+        "type": "options",
+        "options": [
+          { "label": "0.5 kg", "price": 7500 },
+          { "label": "1 kg", "price": 15000 },
+          { "label": "2 kg", "price": 28000 }
+        ]
+      },
+      "available": true,
+      "featured": false,
+      "promotion": true
+    },
+    {
+      "id": "noissette",
+      "category": "congelados",
+      "name": "Papas noissette",
+      "description": "Papas noissette Mccain",
+      "image": "./products/noissette.jpg",
+      "pricing": {
+        "type": "options",
+        "options": [
+          { "label": "0.5 kg", "price": 6500 },
+          { "label": "1 kg", "price": 13000 }
+        ]
+      },
+      "available": true,
+      "featured": false,
+      "promotion": true
+    },
+    {
+      "id": "milanesas_gragys",
+      "category": "congelados",
+      "name": "Milanesas de pollo grangys",
+      "description": "Papas noissette Mccain",
+      "image": "./products/milas_pollo.jpeg",
+      "pricing": {
+        "type": "options",
+        "options": [
+          { "label": "0.5 kg", "price": 6500 },
+          { "label": "1 kg", "price": 13000 }
+        ]
+      },
+      "available": true,
+      "featured": false,
+      "promotion": false
+    },
+    {
+      "id": "croquetas",
+      "category": "congelados",
+      "name": "Croquetas de papa con JyQ",
+      "description": "Croquetas de papa con jamon y mozzarella",
+      "image": "./products/croquetas.jpg",
+      "pricing": {
+        "type": "options",
+        "options": [
+          { "label": "0.5 kg", "price": 6500 },
+          { "label": "1 kg", "price": 13000 }
+        ]
+      },
+      "available": true,
+      "featured": false,
+      "promotion": false
+    },
+    {
+      "id": "nuggets",
+      "category": "congelados",
+      "name": "Nuggets de pollo crocantes",
+      "description": "Nuggets de pollo crocante grangys",
+      "image": "./products/nuggets.jpeg",
+      "pricing": {
+        "type": "options",
+        "options": [
+          { "label": "0.5 kg", "price": 5500 },
+          { "label": "1 kg", "price": 11000 },
+          { "label": "2 kg", "price": 19000 }
+        ]
+      },
+      "available": true,
+      "featured": false,
+      "promotion": true
+    },
+    {
+      "id": "bocaditos_espinaca",
+      "category": "congelados",
+      "name": "Bocaditos de espinaca y queso",
+      "description": "Bocaditos de espinaca grangys",
+      "image": "./products/bocaditos_espinaca.jpeg",
+      "pricing": {
+        "type": "options",
+        "options": [
+          { "label": "0.5 kg", "price": 4500 },
+          { "label": "1 kg", "price": 9000 }
+        ]
+      },
+      "available": true,
+      "featured": false,
+      "promotion": false
+    },
+    {
+      "id": "bocaditos_calabaza",
+      "category": "congelados",
+      "name": "Bocaditos de calabaza y queso",
+      "description": "Bocaditos rellenos de calabaza y mozarella",
+      "image": "./products/bocaditos_calabaza.png",
+      "pricing": {
+        "type": "options",
+        "options": [
+          { "label": "0.5 kg", "price": 6000 },
+          { "label": "1 kg", "price": 12000 }
+        ]
+      },
+      "available": true,
+      "featured": false,
+      "promotion": false
     }
   ]
 }

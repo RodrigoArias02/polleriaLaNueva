@@ -1,11 +1,4 @@
-export const CATEGORIES = [
-  { id: 'todos', label: 'Todos' },
-  { id: 'pollo', label: 'Pollo' },
-  { id: 'elaborados', label: 'Elaborados' },
-  { id: 'rellenas', label: 'Rellenas' },
-  { id: 'combos', label: 'Combos' },
-  { id: 'ofertas', label: 'Ofertas' },
-]
+import { CATEGORIES } from "../data/categories.js";
 
 export default function CategoryNav({ selected, onSelect }) {
   return (
@@ -16,7 +9,7 @@ export default function CategoryNav({ selected, onSelect }) {
             <button
               type="button"
               className={`category-nav__pill ${
-                selected === category.id ? 'is-active' : ''
+                selected === category.id ? "is-active" : ""
               }`}
               onClick={() => onSelect(category.id)}
             >
@@ -26,5 +19,5 @@ export default function CategoryNav({ selected, onSelect }) {
         ))}
       </ul>
     </nav>
-  )
+  );
 }

@@ -7,6 +7,17 @@ import Cart from './components/Cart.jsx'
 import Footer from './components/footer.jsx'
 import productsData from './data/products.json'
 import Time from './components/time.jsx'
+import { CATEGORIES } from './data/categories.js' // ajustá esta ruta a donde tengas CATEGORIES
+
+// Orden de categorías para mostrar en "Todos" / "Ofertas",
+// excluyendo los pseudo-filtros "todos" y "ofertas"
+const CATEGORY_ORDER = CATEGORIES
+  .filter((c) => c.id !== 'todos' && c.id !== 'ofertas')
+  .reduce((acc, c, index) => {
+    acc[c.id] = index
+    return acc
+  }, {})
+
 export default function App() {
   const [selectedCategory, setSelectedCategory] = useState('todos')
   const [isCartOpen, setIsCartOpen] = useState(false)
@@ -14,9 +25,15 @@ export default function App() {
 
   const filteredProducts = useMemo(() => {
     const all = productsData.products.filter((product) => product.available)
-    if (selectedCategory === 'todos') return all
-    if (selectedCategory === 'ofertas') return all.filter((p) => p.promotion)
-    return all.filter((p) => p.category === selectedCategory)
+
+    let result
+    if (selectedCategory === 'todos') result = all
+    else if (selectedCategory === 'ofertas') result = all.filter((p) => p.promotion)
+    else result = all.filter((p) => p.category === selectedCategory)
+
+    return [...result].sort(
+      (a, b) => (CATEGORY_ORDER[a.category] ?? 999) - (CATEGORY_ORDER[b.category] ?? 999)
+    )
   }, [selectedCategory])
 
   return (
