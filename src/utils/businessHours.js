@@ -1,28 +1,28 @@
 export const businessHours = {
   sunday: null,
   monday: [
-    { open: "08:00", close: "14:00" },
-    { open: "17:00", close: "21:00" },
+    { open: "10:00", close: "14:00" },
+    { open: "17:30", close: "21:00" },
   ],
   tuesday: [
-    { open: "08:00", close: "14:00" },
-    { open: "17:00", close: "21:00" },
+    { open: "10:00", close: "14:00" },
+    { open: "17:30", close: "21:00" },
   ],
   wednesday: [
-    { open: "08:00", close: "14:00" },
-    { open: "17:00", close: "21:00" },
+    { open: "10:00", close: "14:00" },
+    { open: "17:30", close: "21:00" },
   ],
   thursday: [
-    { open: "08:00", close: "14:00" },
-    { open: "17:00", close: "21:00" },
+    { open: "10:00", close: "14:00" },
+    { open: "17:30", close: "21:00" },
   ],
   friday: [
-    { open: "08:00", close: "02:00" },
-    { open: "17:00", close: "21:00" },
+    { open: "10:00", close: "14:00" },
+    { open: "17:30", close: "21:00" },
   ],
   saturday: [
-    { open: "08:00", close: "02:00" },
-    { open: "17:00", close: "21:00" },
+    { open: "10:00", close: "14:00" },
+    { open: "17:30", close: "21:00" },
   ],
 };
 
