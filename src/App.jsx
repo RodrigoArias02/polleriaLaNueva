@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useMemo, useState, useRef } from "react";
 import { Toaster } from "react-hot-toast";
 
 import Header from "./components/Header.jsx";
@@ -24,8 +24,27 @@ export default function App() {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [modalProduct, setModalProduct] = useState(null);
   const [isStoreInfoOpen, setIsStoreInfoOpen] = useState(false);
+
+  // Referencia al comienzo del catálogo
+  const productsRef = useRef(null);
+
+  function handleCategoryChange(category) {
+    setSelectedCategory(category);
+
+    // Esperamos al siguiente frame para que el DOM
+    // tenga la nueva categoría renderizada.
+    requestAnimationFrame(() => {
+      productsRef.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    });
+  }
+
   const filteredProducts = useMemo(() => {
-    const all = productsData.products.filter((product) => product.available);
+    const all = productsData.products.filter(
+      (product) => product.available,
+    );
 
     let result;
 
@@ -34,7 +53,9 @@ export default function App() {
     } else if (selectedCategory === "ofertas") {
       result = all.filter((p) => p.promotion);
     } else {
-      result = all.filter((p) => p.category === selectedCategory);
+      result = all.filter(
+        (p) => p.category === selectedCategory,
+      );
     }
 
     return [...result].sort(
@@ -64,10 +85,14 @@ export default function App() {
 
         <CategoryNav
           selected={selectedCategory}
-          onSelect={setSelectedCategory}
+          onSelect={handleCategoryChange}
         />
 
-        <section className="product-grid" aria-label="Catálogo de productos">
+        <section
+          ref={productsRef}
+          className="product-grid"
+          aria-label="Catálogo de productos"
+        >
           {filteredProducts.map((product) => (
             <ProductCard
               key={product.id}
@@ -84,7 +109,10 @@ export default function App() {
         </section>
       </main>
 
-      <Cart isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
+      <Cart
+        isOpen={isCartOpen}
+        onClose={() => setIsCartOpen(false)}
+      />
 
       {modalProduct && (
         <ProductModal
@@ -92,15 +120,16 @@ export default function App() {
           onClose={() => setModalProduct(null)}
         />
       )}
+
       {isStoreInfoOpen && (
         <StoreInfoModal
           isOpen={isStoreInfoOpen}
           onClose={() => setIsStoreInfoOpen(false)}
         />
       )}
+
       <Footer />
 
-      {/* Toast global */}
       <Toaster
         position="top-center"
         toastOptions={{

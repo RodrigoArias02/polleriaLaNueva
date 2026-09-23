@@ -321,7 +321,7 @@ background-image:
 }
 
 .product-grid {
-  
+    scroll-margin-top: 150px;
   margin: 0 auto;
   padding: 8px 70px 60px;
   display: grid;
