@@ -144,6 +144,7 @@ img {
   padding:0 10px;
   margin-top: 30px;
   margin-bottom: 30px;
+  background: none;
 }
 .is-closed{
     border: 2px solid var(--danger);
@@ -1005,4 +1006,273 @@ footer div span{
   .line{
     display: none;
   }
+}
+
+
+
+
+
+
+
+
+
+/* ---------- Store info modal ---------- */
+iframe{
+  border: none;
+  border-radius: 12px;
+  margin: 10px 0px 20px;
+}
+.store-modal-overlay {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background: rgba(38, 32, 25, 0.45);
+
+  z-index: 40;
+}
+
+
+.store-modal {
+  position: relative;
+
+  width: min(480px, 100%);
+  max-height: fit-content;
+
+  overflow-y: auto;
+
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+
+  box-shadow: 0 24px 48px rgba(38, 32, 25, 0.24);
+}
+.store-modal svg{
+  color: #F8B062;
+}
+/* ---------- Header ---------- */
+
+.store-modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 18px 26px;
+
+  border-bottom: 1px solid var(--border);
+}
+
+.store-modal__header-content {
+  display: flex;
+  align-items: start;
+  gap: 5px;
+
+}
+
+.store-modal__header h2 {
+  font-size: 19px;
+}
+
+.store-modal__header p {
+  margin: 0;
+
+  color: var(--gray);
+  font-size: 13px;
+}
+
+.store-modal__close {
+  width: 36px;
+  height: 36px;
+
+  flex-shrink: 0;
+
+  border-radius: 100%;
+  border: none;
+  font-weight: 1000;
+  background: rgb(245, 245, 245);
+  color: var(--text);
+
+  font-size: 15px;
+}
+
+.store-modal__close:hover {
+  border-color: var(--text);
+}
+
+/* ---------- Content ---------- */
+
+.store-modal__content {
+  padding: 20px;
+}
+
+/* ---------- Location ---------- */
+.store-modal__section_map{
+  display: flex;
+  align-items: start;
+}
+.store-modal__section_map svg{
+  width: 30px;
+  height: auto;
+}
+.store-modal__section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  margin-bottom: 24px;
+}
+
+.store-modal__section:last-child {
+  margin-bottom: 0;
+}
+
+.store-modal__section-title {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+}
+.store-modal__section-title svg{
+  width: 25px;
+  height: auto;
+}
+.store-modal__location {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 16px;
+
+  padding: 14px 16px;
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+
+  background: var(--surface);
+}
+
+.store-modal__location-info {
+  min-width: 0;
+}
+
+.store-modal__location-name {
+  margin: 0;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.store-modal__location-address {
+  margin: 3px 0 0;
+
+  color: var(--gray);
+  font-size: 13px;
+}
+
+.store-modal__location-link {
+  flex-shrink: 0;
+
+  padding: 7px 12px;
+
+  border-radius: 999px;
+  border: 1px solid var(--border);
+
+  background: var(--surface);
+  color: var(--text);
+
+  font-size: 12px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition:
+    border-color 0.15s ease,
+    color 0.15s ease,
+    background 0.15s ease;
+}
+
+.store-modal__location-link:hover {
+  border-color: var(--accent);
+  color: var(--accent-dark);
+  background: var(--accent-soft);
+}
+
+/* ---------- Hours ---------- */
+
+.store-modal__hours {
+  display: flex;
+  flex-direction: column;
+
+  border-radius: var(--radius-md);
+
+  overflow: hidden;
+}
+
+.store-modal__day {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+
+  gap: 12px;
+
+  padding: 11px 0px;
+
+  font-size: 13px;
+
+  border-bottom: 1px solid var(--border);
+}
+
+.store-modal__day:last-child {
+  border-bottom: none;
+}
+
+.store-modal__day-name {
+  font-weight: 600;
+}
+
+.store-modal__day-hours {
+  color: var(--gray);
+  text-align: right;
+}
+
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 770px) {
+  .store-modal-overlay {
+    padding: 0;
+
+  }
+
+  .store-modal {
+    width: 100%;
+    min-height: fit-content;
+    overflow-y: auto;
+    border-radius: 16px;
+    
+  }
+
+  .store-modal__content {
+    padding: 18px 26px 24px;
+  }
+
+  .store-modal__day {
+    grid-template-columns: 100px 1fr;
+  }
+
+  .store-modal__header-content svg{
+    width: 30px;
+    height: auto;
+
+  }
+.store-modal__header-content h2 svg{
+  width: 30px;
+  height: auto;
+}
 }

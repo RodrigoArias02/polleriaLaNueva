@@ -44,7 +44,7 @@
       "pricing": {
         "type": "options",
         "options": [
-          { "label": "1 kg", "price": 5000 },
+          { "label": "1 kg", "price": 5500 },
           { "label": "3 kg", "price": 13800 }
         ]
       },
@@ -57,7 +57,7 @@
       "category": "pollo",
       "name": "Suprema de pollo",
       "description": "Suprema de pollo fresco, perfecto para el horno o el disco.",
-      "image": "./products/",
+      "image": "./products/pechuga.png",
       "pricing": {
         "type": "options",
         "options": [{ "label": "1 kg", "price": 16000 }]
@@ -88,7 +88,7 @@
       "image": "./products/pollo_entero.jpeg",
       "pricing": {
         "type": "options",
-        "options": [{ "label": "1 kg", "price": 5000 }]
+        "options": [{ "label": "1 kg", "price": 5500 }]
       },
       "available": true,
       "featured": true,
@@ -165,6 +165,34 @@
       "pricing": {
         "type": "fixed",
         "price": 24000
+      },
+      "available": true,
+      "featured": true,
+      "promotion": false
+    },
+        {
+      "id": "combo_freezer",
+      "category": "combos",
+      "name": "Combo freezer salvador",
+      "description": "1 kg de nuggets de pollo + 1 kg de patitas + 500gr de papas caritas + 1 kg de papa bastón + 500gr de hamburguesas de pollo.",
+      "image": "/images/combo-milanesas-papas.webp",
+      "pricing": {
+        "type": "fixed",
+        "price": 45000
+      },
+      "available": true,
+      "featured": true,
+      "promotion": false
+    },
+            {
+      "id": "combo_escolar",
+      "category": "combos",
+      "name": "Combo escolar",
+      "description": "500gr de nuggets + 500gr de patitas de pollo + 1kg de milanesas de pollo + 500gr de papa baston",
+      "image": "/images/combo-milanesas-papas.webp",
+      "pricing": {
+        "type": "fixed",
+        "price": 30000
       },
       "available": true,
       "featured": true,
@@ -251,13 +279,13 @@
       "pricing": {
         "type": "options",
         "options": [
-          { "label": "1 kg", "price": 11000 },
-          { "label": "2 kg", "price": 19000 }
+          { "label": "0.5 kg", "price": 5700 },
+          { "label": "1 kg", "price": 11500 }
         ]
       },
       "available": true,
       "featured": false,
-      "promotion": true
+      "promotion": false
     },
     {
       "id": "merluza_limon",
@@ -310,7 +338,7 @@
       },
       "available": true,
       "featured": false,
-      "promotion": true
+      "promotion": false
     },
     {
       "id": "milanesas_gragys",
@@ -392,6 +420,91 @@
         "options": [
           { "label": "0.5 kg", "price": 6000 },
           { "label": "1 kg", "price": 12000 }
+        ]
+      },
+      "available": true,
+      "featured": false,
+      "promotion": false
+    },
+        {
+      "id": "chuletas",
+      "category": "pollo",
+      "name": "Chuletas de cerdo",
+      "description": "Chuletas de cerdo",
+      "image": "./products/chuletas.png",
+      "pricing": {
+        "type": "options",
+        "options": [
+          { "label": "0.5 kg", "price": 4700 },
+          { "label": "1 kg", "price": 9500 }
+        ]
+      },
+      "available": true,
+      "featured": false,
+      "promotion": false
+    },
+    {
+      "id": "hamburguesa_verdeo",
+      "category": "elaborados",
+      "name": "Hamburguesas de verdeo",
+      "description": "Hamburguesas de pollo con verdeo",
+      "image": "./products/hamburguesa_verdeo.png",
+      "pricing": {
+        "type": "options",
+        "options": [
+          { "label": "0.5 kg", "price": 8000 },
+          { "label": "1 kg", "price": 16000 }
+        ]
+      },
+      "available": true,
+      "featured": false,
+      "promotion": false
+    },
+        {
+      "id": "hamburguesa_morron",
+      "category": "elaborados",
+      "name": "Hamburguesas de morron",
+      "description": "Hamburguesas de pollo con morron",
+      "image": "./products/hamburguesa_morron.png",
+      "pricing": {
+        "type": "options",
+        "options": [
+          { "label": "0.5 kg", "price": 8000 },
+          { "label": "1 kg", "price": 16000 }
+        ]
+      },
+      "available": true,
+      "featured": false,
+      "promotion": false
+    },
+            {
+      "id": "hamburguesa_JyQ",
+      "category": "elaborados",
+      "name": "Hamburguesas de J&Q",
+      "description": "Hamburguesas de pollo rellenas con Jamon y queso",
+      "image": "./products/hamburguesa_JyQ.png",
+      "pricing": {
+        "type": "options",
+        "options": [
+          { "label": "0.5 kg", "price": 8000 },
+          { "label": "1 kg", "price": 16000 }
+        ]
+      },
+      "available": true,
+      "featured": false,
+      "promotion": false
+    },
+    {
+      "id": "patitas",
+      "category": "congelados",
+      "name": "Patitas de pollo",
+      "description": "Patitas de pollo rebozadas grangys",
+      "image": "./products/patitas.jpg",
+      "pricing": {
+        "type": "options",
+        "options": [
+          { "label": "0.5 kg", "price": 5500 },
+          { "label": "1 kg", "price": 11000 }
         ]
       },
       "available": true,

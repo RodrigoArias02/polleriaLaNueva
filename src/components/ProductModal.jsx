@@ -4,8 +4,9 @@ import { formatPrice } from "../utils/format.js";
 import { parseKgFromLabel } from "../utils/pricing.js";
 import { PlusIcon, MinusIcon } from "../utils/icons.jsx";
 import { useLockBodyScroll } from "../hooks/scroll.js";
+import toast from "react-hot-toast";
 export default function ProductModal({ product, onClose }) {
-  useLockBodyScroll(true)
+  useLockBodyScroll(true);
   const { addToCart } = useCart();
   const hasOptions = product.pricing.type === "options";
 
@@ -54,6 +55,9 @@ export default function ProductModal({ product, onClose }) {
 
   function handleAdd() {
     addToCart(product, hasOptions ? selectedOption : null, quantity);
+
+    toast.success(`${product.name} agregado al carrito`);
+
     onClose();
   }
 

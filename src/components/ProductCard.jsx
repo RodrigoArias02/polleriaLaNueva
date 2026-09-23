@@ -1,32 +1,44 @@
 import { useState } from "react";
+import toast from "react-hot-toast";
+
 import { useCart } from "../context/CartContext.jsx";
 import { formatPrice } from "../utils/format.js";
 import { CartOutLineIcon } from "../utils/icons.jsx";
+
 export default function ProductCard({ product, onOpenModal }) {
   const { addToCart } = useCart();
+
   const hasOptions = product.pricing.type === "options";
+
   const [selectedOption, setSelectedOption] = useState(
     hasOptions ? product.pricing.options[0] : null,
   );
+
   const [imageError, setImageError] = useState(false);
 
-  const currentOption = selectedOption ?? product.pricing.options?.[0] ?? null;
+  const currentOption =
+    selectedOption ?? product.pricing.options?.[0] ?? null;
 
   const displayPrice = hasOptions
     ? currentOption?.price
     : product.pricing.price;
+
   const unitSuffix =
-    !hasOptions && product.pricing.unit ? `/${product.pricing.unit}` : "";
+    !hasOptions && product.pricing.unit
+      ? `/${product.pricing.unit}`
+      : "";
 
   function handleAdd() {
-    // Sin cantidad explícita: usa la cantidad base de la opción elegida
-    // (por ejemplo, "2 kg" agrega 2, no 1). Ver src/utils/pricing.js
     addToCart(product, hasOptions ? selectedOption : null);
+
+    toast.success(`${product.name} agregado al carrito`);
   }
 
   return (
     <article className="product-card">
-      {product.promotion && <span className="product-card__badge">Oferta</span>}
+      {product.promotion && (
+        <span className="product-card__badge">Oferta</span>
+      )}
 
       <div
         className="product-card__image-wrap"
@@ -34,7 +46,9 @@ export default function ProductCard({ product, onOpenModal }) {
         role="button"
         tabIndex={0}
         onKeyDown={(event) => {
-          if (event.key === "Enter" || event.key === " ") onOpenModal(product);
+          if (event.key === "Enter" || event.key === " ") {
+            onOpenModal(product);
+          }
         }}
         aria-label={`Ver detalle de ${product.name}`}
       >
@@ -56,9 +70,15 @@ export default function ProductCard({ product, onOpenModal }) {
         )}
       </div>
 
-      <div className="product-card__body" onClick={() => onOpenModal(product)}>
+      <div
+        className="product-card__body"
+        onClick={() => onOpenModal(product)}
+      >
         <h3 className="product-card__name">{product.name}</h3>
-        <p className="product-card__description">{product.description}</p>
+
+        <p className="product-card__description">
+          {product.description}
+        </p>
 
         {hasOptions && (
           <div
@@ -71,7 +91,9 @@ export default function ProductCard({ product, onOpenModal }) {
                 key={option.label}
                 type="button"
                 className={`product-card__option ${
-                  selectedOption.label === option.label ? "is-selected" : ""
+                  selectedOption.label === option.label
+                    ? "is-selected"
+                    : ""
                 }`}
                 onClick={(event) => {
                   event.stopPropagation();
@@ -89,6 +111,7 @@ export default function ProductCard({ product, onOpenModal }) {
             {formatPrice(displayPrice)}
             {unitSuffix}
           </span>
+
           <button
             type="button"
             className="product-card__add-btn"
